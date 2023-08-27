@@ -87,14 +87,14 @@ void gui::CreateHWindow(const char* windowName) noexcept
 	windowClass.hCursor = 0;
 	windowClass.hbrBackground = 0;
 	windowClass.lpszMenuName = 0;
-	windowClass.lpszClassName = "class001";
+	windowClass.lpszClassName = "class";
 	windowClass.hIconSm = 0;
 
 	RegisterClassEx(&windowClass);
 
 	window = CreateWindowEx(
 		0,
-		"class001",
+		"class",
 		windowName,
 		WS_POPUP,
 		100,
