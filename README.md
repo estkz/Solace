@@ -29,4 +29,7 @@ To resolve the include errors, follow these additional steps:
 Note: Ensure that you include the double quotation marks when adding them to your properties! (this is not needed for d3d9.lib)
 
 ## 🚀 Enjoy
-So, you want to learn how to load your image in imgui DirectX9. You're at the right place!
+Have fun using this super advanced and easy-to-use calculator! Just so you know, we're still working on adding final touches.
+
+FYI: This tool isn't fully done yet.
+Version: Early Alpha
