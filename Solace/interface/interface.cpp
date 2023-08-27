@@ -203,7 +203,7 @@ void gui::BeginRender() noexcept
 
 		if (message.message == WM_QUIT)
 		{
-			isRunning = !isRunning;
+			isOpened = !isOpened;
 			return;
 		}
 	}
