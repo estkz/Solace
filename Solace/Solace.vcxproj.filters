@@ -45,6 +45,9 @@
     <ClInclude Include="interface\data\logo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="interface\data\components\components.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="imgui\imgui.cpp">
