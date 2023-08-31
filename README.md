@@ -23,7 +23,7 @@ To resolve the include errors, follow these additional steps:
 		• Go to "VC++ Directories -> Library Directories," click the arrow again.
 		• Click "Edit" and add the following: "$(DXSDK_DIR)LIB\x86".
 		• Click "Apply" to save the changes.
-    • Go to linker -> input and add the following: d3d9.lib
+		• Go to linker -> input and add the following: d3d9.lib
 		• Once completed, the error should be resolved.
 
 Note: Ensure that you include the double quotation marks when adding them to your properties! (this is not needed for d3d9.lib)
