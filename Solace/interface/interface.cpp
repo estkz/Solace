@@ -3,6 +3,7 @@
 #include "../imgui/imgui.h"
 #include "../imgui/imgui_impl_dx9.h"
 #include "../imgui/imgui_impl_win32.h"
+#include <string>
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(
 	HWND window,
@@ -251,7 +252,78 @@ void gui::Render() noexcept
 		ImGuiWindowFlags_NoMove
 	);
 
-	ImGui::Button("estkz <3 chxnisa");
+	static std::string input = "";
+	static std::string result = "";
+
+	ImGui::Text("%s", input.c_str());
+
+	ImGui::Columns(4);
+
+	if (ImGui::Button("7")) { input += "7"; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button("8")) { input += "8"; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button("9")) { input += "9"; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button("/")) { input += "/"; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button("4")) { input += "4"; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button("5")) { input += "5"; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button("6")) { input += "6"; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button("*")) { input += "*"; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button("1")) { input += "1"; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button("2")) { input += "2"; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button("3")) { input += "3"; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button("-")) { input += "-"; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button("0")) { input += "0"; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button(".")) { input += "."; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button("="))
+	{
+		// You can add code here to evaluate the input expression and set the result.
+		// For simplicity, we'll just echo the input as the result in this example.
+		result = input;
+	}
+	ImGui::NextColumn();
+
+	if (ImGui::Button("+")) { input += "+"; }
+	ImGui::NextColumn();
+
+	if (ImGui::Button("C"))
+	{
+		input.clear();
+		result.clear();
+	}
+
+	ImGui::Columns(1);
+
+	// Display the result using InputText as read-only
+	ImGui::Text("Result:");
+	ImGui::SameLine();
+	ImGui::InputText("##Result", (char*)result.c_str(), result.size(), ImGuiInputTextFlags_ReadOnly);
 
 	ImGui::End();
 }
