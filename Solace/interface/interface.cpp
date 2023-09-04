@@ -252,78 +252,79 @@ void gui::Render() noexcept
 		ImGuiWindowFlags_NoMove
 	);
 
-	static std::string input = "";
-	static std::string result = "";
+	static char input[256] = "";
 
-	ImGui::Text("%s", input.c_str());
+	ImGui::SetNextItemWidth(404);
+	ImGui::InputText("##Input", input, sizeof(input));
 
+	// Layout for buttons
 	ImGui::Columns(4);
 
-	if (ImGui::Button("7")) { input += "7"; }
+	// ... Rest of my code ...
+
+	ImGui::Columns(4); // Start a new column for buttons
+
+	if (ImGui::Button("7")) { strcat_s(input, "7"); }
 	ImGui::NextColumn();
 
-	if (ImGui::Button("8")) { input += "8"; }
+	if (ImGui::Button("8")) { strcat_s(input, "8"); }
 	ImGui::NextColumn();
 
-	if (ImGui::Button("9")) { input += "9"; }
+	if (ImGui::Button("9")) { strcat_s(input, "9"); }
 	ImGui::NextColumn();
 
-	if (ImGui::Button("/")) { input += "/"; }
+	if (ImGui::Button("/")) { strcat_s(input, "/"); }
 	ImGui::NextColumn();
 
-	if (ImGui::Button("4")) { input += "4"; }
+	if (ImGui::Button("4")) { strcat_s(input, "4"); }
 	ImGui::NextColumn();
 
-	if (ImGui::Button("5")) { input += "5"; }
+	if (ImGui::Button("5")) { strcat_s(input, "5"); }
 	ImGui::NextColumn();
 
-	if (ImGui::Button("6")) { input += "6"; }
+	if (ImGui::Button("6")) { strcat_s(input, "6"); }
 	ImGui::NextColumn();
 
-	if (ImGui::Button("*")) { input += "*"; }
+	if (ImGui::Button("*")) { strcat_s(input, "*"); }
 	ImGui::NextColumn();
 
-	if (ImGui::Button("1")) { input += "1"; }
+	if (ImGui::Button("1")) { strcat_s(input, "1"); }
 	ImGui::NextColumn();
 
-	if (ImGui::Button("2")) { input += "2"; }
+	if (ImGui::Button("2")) { strcat_s(input, "2"); }
 	ImGui::NextColumn();
 
-	if (ImGui::Button("3")) { input += "3"; }
+	if (ImGui::Button("3")) { strcat_s(input, "3"); }
 	ImGui::NextColumn();
 
-	if (ImGui::Button("-")) { input += "-"; }
+	if (ImGui::Button("-")) { strcat_s(input, "-"); }
 	ImGui::NextColumn();
 
-	if (ImGui::Button("0")) { input += "0"; }
+	if (ImGui::Button("0")) { strcat_s(input, "0"); }
 	ImGui::NextColumn();
 
-	if (ImGui::Button(".")) { input += "."; }
+	if (ImGui::Button(".")) { strcat_s(input, "."); }
 	ImGui::NextColumn();
 
 	if (ImGui::Button("="))
 	{
-		// You can add code here to evaluate the input expression and set the result.
+		// You can add code here to evaluate the input expression and handle the result.
 		// For simplicity, we'll just echo the input as the result in this example.
-		result = input;
 	}
 	ImGui::NextColumn();
 
-	if (ImGui::Button("+")) { input += "+"; }
+	if (ImGui::Button("+")) { strcat_s(input, "+"); }
 	ImGui::NextColumn();
 
 	if (ImGui::Button("C"))
 	{
-		input.clear();
-		result.clear();
+		input[0] = '\0'; // Clear the input buffer
 	}
 
+	// End the column layout
 	ImGui::Columns(1);
 
-	// Display the result using InputText as read-only
-	ImGui::Text("Result:");
-	ImGui::SameLine();
-	ImGui::InputText("##Result", (char*)result.c_str(), result.size(), ImGuiInputTextFlags_ReadOnly);
+	// Display any other content you want below the buttons here.
 
 	ImGui::End();
 }
