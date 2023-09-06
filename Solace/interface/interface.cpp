@@ -255,12 +255,7 @@ void gui::Render() noexcept
 	static char input[256] = "";
 
 	ImGui::SetNextItemWidth(404);
-	ImGui::InputText("##Input", input, sizeof(input));
-
-	// Layout for buttons
-	ImGui::Columns(4);
-
-	// ... Rest of my code ...
+	ImGui::InputText("##calc_input", input, sizeof(input));
 
 	ImGui::Columns(4); // Start a new column for buttons
 
@@ -327,4 +322,6 @@ void gui::Render() noexcept
 	// Display any other content you want below the buttons here.
 
 	ImGui::End();
+
+	//
 }
