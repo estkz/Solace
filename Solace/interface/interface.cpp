@@ -322,6 +322,4 @@ void gui::Render() noexcept
 	// Display any other content you want below the buttons here.
 
 	ImGui::End();
-
-	//
 }
