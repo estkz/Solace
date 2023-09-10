@@ -7,8 +7,8 @@
 namespace gui
 {
 	// The width and height of the menu (in pixels)
-	constexpr int WIDTH = 420;
-	constexpr int HEIGHT = 600;
+	constexpr int WIDTH = 555;
+	constexpr int HEIGHT = 745;
 
 	// A boolean variable that determines whether the menu is set to open (true) or closed (false)
 	inline bool isOpened = true;
